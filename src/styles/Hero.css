@@ -1,0 +1,12 @@
+#hero {
+  height: 850px;
+  background-image: url("../images/hero-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#hero h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
