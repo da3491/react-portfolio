@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTheme } from "./ThemeContext";
 import "../styles/Hero.css";
 
 const Hero = () => {
   const theme = useTheme();
+
   console.log("in hero theme", theme.image);
+
   return (
-    <div id="hero" className="d-flex justify-content-center">
-      <img
-        src={`"${theme.image}"`}
+    <div
+      id="hero"
+      className="d-flex justify-content-center"
+      style={{
+        backgroundImage: `url(${require(`../images/${theme.image}`)})`,
+      }}
+    >
+      {/* <img
+        src={require(`../images/${theme.image}`)}
         alt="view of a mountain"
         style={{ width: "100px", height: "50px" }}
-      />
+      /> */}
       <div>
         <h1 style={{ color: theme.color }}>Drew Annese</h1>
         <div className="row text-center">
