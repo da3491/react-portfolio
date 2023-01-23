@@ -20,6 +20,7 @@ function ProjectCard() {
             onClick={() => setOpen(!open)}
             aria-expanded="false"
             aria-controls="cardIfno"
+            href="#"
           >
             ^
           </a>
