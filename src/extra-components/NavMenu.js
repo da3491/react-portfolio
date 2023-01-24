@@ -5,11 +5,8 @@ import "../styles/NavMenu.css";
 function NavMenu() {
   return (
     <Navbar expand="md" fixed="top">
-      <Navbar.Toggle
-        aria-controls="navbar-nav"
-        className="ms-auto px-2 mx-2 b-0"
-      />
-      <Navbar.Collapse id="navbar-nav" className="justify-content-center">
+      <Navbar.Toggle aria-controls="navbar-nav" />
+      <Navbar.Collapse id="navbar-nav">
         <Nav>
           <Nav.Item>
             <Nav.Link href="#">work</Nav.Link>
