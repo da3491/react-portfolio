@@ -41,27 +41,10 @@ const ThemeSelector = () => {
             changeTheme(theme);
           }}
           value={theme}
-          className="theme-button"
         ></StyledButton>
       ))}
     </StyledThemeSelector>
   );
-
-  //   <div
-  //   id="theme_Buttons"
-  //   className="position-absolute bottom-0 start-50 translate-middle mb-4 d-flex gap-3"
-  // >
-  //   {Object.keys(themes).map((theme) => (
-  //     <button
-  //       key={theme}
-  //       onClick={() => {
-  //         changeTheme(theme);
-  //       }}
-  //       value={theme}
-  //       className="theme-button"
-  //     ></button>
-  //   ))}
-  // </div>
 };
 
 export default ThemeSelector;

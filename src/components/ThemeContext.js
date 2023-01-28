@@ -20,7 +20,7 @@ export const ThemeProvider = ({ children }) => {
   }
 
   return (
-    <ThemeContext.Provider value={theme} className="position-relative">
+    <ThemeContext.Provider value={theme}>
       <ThemeUpdateContext.Provider value={changeTheme}>
         {children}
       </ThemeUpdateContext.Provider>

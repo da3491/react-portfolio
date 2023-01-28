@@ -1,30 +1,55 @@
-import React from "react";
-import { Container, Col, Row } from "react-bootstrap";
-import "../styles/Work.css";
+import React, { useState } from "react";
+import styled from "styled-components";
+import projects from "../utils/projects.js";
 import ProjectCard from "./ProjectCard";
 
-function Work() {
+const Container = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+`;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1;
+  gap: 1.5em;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+`;
+
+const Work = () => {
+  const [activeCard, setActiveCard] = useState(Object.keys(projects)[0]);
+
+  const handleToggle = (cardId) => {
+    console.log("in handleToggle, activeCard:", activeCard);
+    console.log("in handleToggle, cardId:", cardId);
+    if (activeCard === cardId) {
+      setActiveCard(null);
+    } else {
+      setActiveCard(cardId);
+    }
+  };
+
   return (
     <Container>
-      <div>
-        <h1 className="text-center py-5">my work</h1>
-        <Row className="gy-4">
-          <Col md={6}>
-            <ProjectCard />
-          </Col>
-          <Col md={6}>
-            <ProjectCard />
-          </Col>
-          <Col md={6}>
-            <ProjectCard />
-          </Col>
-          <Col md={6}>
-            <ProjectCard />
-          </Col>
-        </Row>
-      </div>
+      {/* <h2 className="text-center py-5">my work</h2> */}
+      <Grid>
+        {Object.keys(projects).map((name) => (
+          <ProjectCard
+            key={name}
+            name={name}
+            image={projects[name].image}
+            text={projects[name].text}
+            isActive={activeCard === name}
+            handleToggle={() => handleToggle(name)}
+          />
+        ))}
+        {/* <ProjectCard /> */}
+      </Grid>
     </Container>
   );
-}
+};
 
 export default Work;

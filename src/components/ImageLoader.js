@@ -7,11 +7,23 @@ const StyledImage = styled.img`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -10;
   object-fit: cover;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, black, transparent);
+  }
 `;
 
-export const ImageLoader = () => {
+const ImageLoader = () => {
   const theme = useTheme();
 
   return (
@@ -27,3 +39,5 @@ export const ImageLoader = () => {
         style={{ width: "100px", height: "50px" }}
       /> */
 };
+
+export default ImageLoader;
