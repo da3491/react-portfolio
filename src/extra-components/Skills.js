@@ -22,7 +22,7 @@ import "./Skills.css";
 const Container = styled.div`
   height: 100%;
   border-radius: 5px;
-  background: #ccc;
+  // background: #ccc;
 
   display: flex;
   flex-direction: column;
@@ -48,12 +48,43 @@ const Grid = styled.div`
     grid-template-rows: 1;
   }
 `;
+
+const StyledHeader = styled.h3`
+  width: 70%;
+  text-align: center;
+  font-size: 1.5rem;
+  background: #ccc;
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 0.5em 1em;
+`;
+
 const Flex = styled.div`
   width: 70%;
+  background: #ccc;
+  margin: 0.3em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: 1px solid white;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  svg:nth-of-type(6) {
+    transform: scale(2.4, 2.4);
+  }
+
+  svg {
+    transform: scale(1.4, 1.4);
+  }
 `;
 //make responsive
 const Button = styled.button`
@@ -74,7 +105,7 @@ const Skills = () => {
     <Container>
       <Grid>
         <Col>
-          <h3>Technologies</h3>
+          <StyledHeader>Technologies</StyledHeader>
           {/* HTML/CSS */}
           <Flex>
             <div>
@@ -110,7 +141,7 @@ const Skills = () => {
           </Flex>
         </Col>
         <Col>
-          <h3>Tools & Libraries</h3>
+          <StyledHeader>Tools & Libraries</StyledHeader>
           {/* Git */}
           <Flex>
             <FaGitAlt />
@@ -128,7 +159,7 @@ const Skills = () => {
           </Flex>
         </Col>
       </Grid>
-      <Button themeColor={theme.colors.accent1}>resume</Button>
+      {/* <Button themeColor={theme.colors.accent1}>resume</Button> */}
     </Container>
   );
 };

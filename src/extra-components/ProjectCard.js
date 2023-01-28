@@ -15,18 +15,24 @@ const Flex = styled.div`
 `;
 const Title = styled.h3`
   display: inline;
-  margin: 0 0 0.5em 0;
+  margin: 0;
   font-size: 1.4rem;
   font-weight: 600;
 `;
 const Subtitle = styled.span`
   color: ${(props) => props.themecolor};
-  padding-left: 1em;
+  padding-left: 0.5em;
   font-size: 0.8rem;
   font-weight: 600;
 `;
 const CardInfo = styled.div`
   padding: 1em;
+  padding-top: 0;
+
+  ${Flex}:first-of-type {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 `;
 const CardText = styled.p`
   padding: 0.5em;
@@ -65,14 +71,14 @@ const Collapse = styled.div`
 const StyledImg = styled.img`
   max-width: 100%;
   object-fit: cover;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid ${(props) => props.themecolor};
 `;
 
 const ProjectCard = ({ name, image, text, handleToggle, isActive }) => {
   const theme = useTheme();
+  console.log(name, +":" + isActive);
+  const activeCard = isActive === name;
 
-  console.log(name, image, text);
-  console.log(name, isActive);
   if (!name) {
     name = "project1";
   }
@@ -85,13 +91,13 @@ const ProjectCard = ({ name, image, text, handleToggle, isActive }) => {
 
   return (
     <Card>
-      <StyledImg src={require(`../images/${image}`)} />
+      <StyledImg
+        src={require(`../images/${image}`)}
+        themecolor={theme.colors.dark}
+      />
       <CardInfo>
-        <Title>{name}</Title>
         <Flex>
-          <Subtitle themecolor={theme.colors.accent1}>
-            JS | React | Chart.js | Responsive
-          </Subtitle>
+          <Title>{name}</Title>
           <ToggleButton onClick={() => handleToggle(name)}>
             {isActive ? (
               <FiChevronDown themecolor={theme.colors.accent1} />
@@ -100,7 +106,10 @@ const ProjectCard = ({ name, image, text, handleToggle, isActive }) => {
             )}
           </ToggleButton>
         </Flex>
-        <Collapse visible={isActive}>
+        <Subtitle themecolor={theme.colors.accent1}>
+          JS | React | Chart.js | Responsive
+        </Subtitle>
+        <Collapse visible={activeCard}>
           <hr />
           <CardText>{text}</CardText>
           <Flex>

@@ -12,7 +12,9 @@ const StyledDisplay = styled.div`
   width: 100%;
   height: 100%;
 
-  overflow: scroll;
+  @media (max-width: 768px) {
+    overflow: scroll;
+  }
 
   // &:before {
   //   content: "";

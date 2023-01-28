@@ -21,14 +21,14 @@ const Container = styled.div`
 
 const Grid = styled.div`
   position: relative;
-  width: 95%;
-  height: 95%;
+  width: 90%;
+  height: 85%;
   max-width: 1600px;
 
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  // display: grid;
+  // grid-template-columns: repeat(8, 1fr);
 
-  border-left: 1px solid white;
+  // border-left: 1px solid white;
 
   @media (min-width: 1000px) {
     width: 80%;
@@ -36,9 +36,9 @@ const Grid = styled.div`
 `;
 
 const Nav = styled.div`
-  grid-column: 8/9;
-  grid-row: 1/2;
-  height: auto;
+  // grid-column: 8/9;
+  // grid-row: 1/2;
+  // height: auto;
 
   display: flex;
   flex-direction: column;
@@ -46,10 +46,10 @@ const Nav = styled.div`
 `;
 
 const Main = styled.div`
-  position: relative;
-  grid-column: 1/8;
-  grid-row: 1/2;
-  height: auto;
+  // position: relative;
+  // grid-column: 1/8;
+  // grid-row: 1/2;
+  // height: auto;
 
   // display: flex;
   // justify-content: flex-start;
@@ -81,12 +81,12 @@ function App() {
         <ImageLoader />
         <Grid>
           <Nav>
-            <Navigation />
-            <ContactLinks />
+            {/* <Navigation /> */}
+            {/* <ContactLinks /> */}
           </Nav>
           <Main>
             <ContentDisplay>
-              <Header>Hi, I'm Drew</Header>
+              {/* <Header>Hi, I'm Drew</Header> */}
             </ContentDisplay>
           </Main>
           <ThemeSelector />

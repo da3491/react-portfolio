@@ -23,13 +23,7 @@ const Work = () => {
   const [activeCard, setActiveCard] = useState(Object.keys(projects)[0]);
 
   const handleToggle = (cardId) => {
-    console.log("in handleToggle, activeCard:", activeCard);
-    console.log("in handleToggle, cardId:", cardId);
-    if (activeCard === cardId) {
-      setActiveCard(null);
-    } else {
-      setActiveCard(cardId);
-    }
+    setActiveCard(activeCard === cardId ? null : cardId);
   };
 
   return (
@@ -42,8 +36,8 @@ const Work = () => {
             name={name}
             image={projects[name].image}
             text={projects[name].text}
-            isActive={activeCard === name}
-            handleToggle={() => handleToggle(name)}
+            isActive={activeCard.name}
+            handleToggle={handleToggle}
           />
         ))}
         {/* <ProjectCard /> */}
