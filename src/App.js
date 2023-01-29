@@ -1,13 +1,18 @@
 import "./App.css";
 import styled from "styled-components";
+import { Routes, Route } from "react-router-dom";
 
 // Components
 import { ThemeProvider } from "./components/ThemeContext";
 import ImageLoader from "./components/ImageLoader";
 import Navigation from "./components/Navigation";
 import ThemeSelector from "./components/ThemeSelector";
-import ContentDisplay from "./components/ContentDisplay";
 import ContactLinks from "./components/ContactLinks";
+
+import Home from "./components/Home";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Work from "./components/Work";
 
 const Container = styled.div`
   position: absolute;
@@ -15,63 +20,22 @@ const Container = styled.div`
   height: 100vh;
 
   display: flex;
-  place-content: center;
+  justify-content: center;
   align-items: center;
 `;
 
-const Grid = styled.div`
+const CenteredContent = styled.div`
   position: relative;
   width: 90%;
   height: 85%;
   max-width: 1600px;
 
-  // display: grid;
-  // grid-template-columns: repeat(8, 1fr);
-
-  // border-left: 1px solid white;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media (min-width: 1000px) {
     width: 80%;
   }
-`;
-
-const Nav = styled.div`
-  // grid-column: 8/9;
-  // grid-row: 1/2;
-  // height: auto;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const Main = styled.div`
-  // position: relative;
-  // grid-column: 1/8;
-  // grid-row: 1/2;
-  // height: auto;
-
-  // display: flex;
-  // justify-content: flex-start;
-  // align-items: center;
-
-  // display: grid;
-  // place-content: center;
-`;
-
-const Header = styled.h1`
-  position: relative;
-  font-size: 3.4rem;
-  font-weight: 600;
-  text-align: left;
-  padding: 3em 0 0 2em;
-  // z-index: 100;
-  color: white;
-
-  @media (max-width: 600px) {
-    font-size: 2rem;
-    padding: 0 0 0 1em;
-  } ;
 `;
 
 function App() {
@@ -79,18 +43,17 @@ function App() {
     <ThemeProvider>
       <Container>
         <ImageLoader />
-        <Grid>
-          <Nav>
-            {/* <Navigation /> */}
-            {/* <ContactLinks /> */}
-          </Nav>
-          <Main>
-            <ContentDisplay>
-              {/* <Header>Hi, I'm Drew</Header> */}
-            </ContentDisplay>
-          </Main>
+        <CenteredContent>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/work" element={<Work />} />
+          </Routes>
+          <ContactLinks />
           <ThemeSelector />
-        </Grid>
+        </CenteredContent>
       </Container>
     </ThemeProvider>
   );

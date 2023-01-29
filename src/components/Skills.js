@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useTheme } from "../components/ThemeContext";
+import { useTheme } from "./ThemeContext";
 
 import {
   FaGitAlt,
@@ -17,17 +17,27 @@ import {
   SiNetlify,
 } from "react-icons/si";
 
-import "./Skills.css";
-
 const Container = styled.div`
+  width: 100%;
   height: 100%;
   border-radius: 5px;
-  // background: #ccc;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+`;
+const Grid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 2;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1;
+    gap: 1em;
+  }
 `;
 const Col = styled.div`
   width: 100%;
@@ -36,19 +46,6 @@ const Col = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
-const Grid = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 2;
-  gap: 1em;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1;
-  }
-`;
-
 const StyledHeader = styled.h3`
   width: 70%;
   text-align: center;
@@ -58,25 +55,24 @@ const StyledHeader = styled.h3`
   border: 1px solid white;
   padding: 0.5em 1em;
 `;
-
 const Flex = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   width: 70%;
   background: #ccc;
-  margin: 0.3em;
-  padding: 0.5em 1em;
   border-radius: 5px;
   border: 1px solid white;
-
   font-size: 0.8rem;
   font-weight: 600;
+
+  margin: 0.3em;
+  padding: 0.5em 1em;
 
   @media (min-width: 768px) {
     font-size: 1.2rem;
   }
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   svg:nth-of-type(6) {
     transform: scale(2.4, 2.4);
@@ -85,17 +81,6 @@ const Flex = styled.div`
   svg {
     transform: scale(1.4, 1.4);
   }
-`;
-//make responsive
-const Button = styled.button`
-  background-color: ${(props) => props.themeColor};
-  font-size: 1.4rem;
-  color: black;
-  border: none;
-  border-radius: 7px;
-  font-weight: 600;
-  padding: 0.3em 1em;
-  margin-bottom: 1em;
 `;
 
 const Skills = () => {
@@ -159,7 +144,6 @@ const Skills = () => {
           </Flex>
         </Col>
       </Grid>
-      {/* <Button themeColor={theme.colors.accent1}>resume</Button> */}
     </Container>
   );
 };

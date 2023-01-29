@@ -3,35 +3,43 @@ import styled from "styled-components";
 
 import { useTheme } from "../components/ThemeContext";
 
-const StyledImage = styled.img`
+const Overlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -10;
-  object-fit: cover;
 
   &:before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 100;
 
     width: 100%;
     height: 50%;
-    background: linear-gradient(to bottom, black, transparent);
+    background: linear-gradient(to bottom, black, transparent, transparent);
   }
+`;
+
+const StyledImage = styled.img`
+  // position: absolute;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  object-fit: cover;
 `;
 
 const ImageLoader = () => {
   const theme = useTheme();
 
   return (
-    <StyledImage
-      src={require(`../images/${theme.image}`)}
-      loading="lazy"
-      alt="view of a mountain"
-    />
+    <Overlay>
+      <StyledImage
+        src={require(`../images/${theme.image}`)}
+        loading="lazy"
+        alt="view of a mountain"
+      />
+    </Overlay>
   );
   /* <img
         src={require(`../images/${theme.image}`)}

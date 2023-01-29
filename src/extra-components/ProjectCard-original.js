@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { Accordion, Col } from "react-bootstrap";
+
+// import { ActiveCardContext } from "./Work";
 import { useTheme } from "../components/ThemeContext";
 import styled from "styled-components";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 // import Image from "../images/apple-clone-image.jpg";
 
-const Card = styled.div`
+const Card = styled(Col)`
+  width: 100%;
   background: #ccc;
   border-radius: 5px;
 `;
@@ -70,17 +74,19 @@ const Collapse = styled.div`
 `;
 const StyledImg = styled.img`
   max-width: 100%;
+  aspect-ratio: 2/1;
   object-fit: cover;
   border-bottom: 2px solid ${(props) => props.themecolor};
 `;
 
-const ProjectCard = ({ name, image, text, handleToggle, isActive }) => {
+const ProjectCard = ({ name, title, image, text }) => {
   const theme = useTheme();
-  console.log(name, +":" + isActive);
-  const activeCard = isActive === name;
+  // const { activeCard, setActiveCard } = useContext(ActiveCardContext);
+  const [isOpen, setIsOpen] = useState(false);
+  // const isActive = activeCard === name;
 
-  if (!name) {
-    name = "project1";
+  if (!title) {
+    title = "project1";
   }
   if (!image) {
     image = "airbnb-news-clone-image.jpg";
@@ -90,16 +96,16 @@ const ProjectCard = ({ name, image, text, handleToggle, isActive }) => {
   }
 
   return (
-    <Card>
+    <Card xs={12} md={6}>
       <StyledImg
         src={require(`../images/${image}`)}
         themecolor={theme.colors.dark}
       />
       <CardInfo>
         <Flex>
-          <Title>{name}</Title>
-          <ToggleButton onClick={() => handleToggle(name)}>
-            {isActive ? (
+          <Title>{title}</Title>
+          <ToggleButton onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? (
               <FiChevronDown themecolor={theme.colors.accent1} />
             ) : (
               <FiChevronUp />
@@ -109,7 +115,7 @@ const ProjectCard = ({ name, image, text, handleToggle, isActive }) => {
         <Subtitle themecolor={theme.colors.accent1}>
           JS | React | Chart.js | Responsive
         </Subtitle>
-        <Collapse visible={activeCard}>
+        <Collapse visible={isOpen}>
           <hr />
           <CardText>{text}</CardText>
           <Flex>

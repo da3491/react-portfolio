@@ -4,6 +4,9 @@ import { useTheme } from "./ThemeContext";
 import { FaFileAlt, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 const StyledIconGroup = styled.div`
+  position: absolute;
+  bottom: -0.45em;
+  right: -0.35em;
   color: ${(props) => props.themecolor};
 
   display: flex;
@@ -16,7 +19,8 @@ const StyledLinks = styled.a`
   color: inherit;
   line-height: 1.1;
 
-  &:hover {
+  &:hover svg,
+  &:active svg {
     color: white;
   }
 `;
