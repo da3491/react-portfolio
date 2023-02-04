@@ -1,28 +1,30 @@
 const themes = {
   theme1: {
     colors: {
-      dark: "#15283Fff",
-      accent1: "#8476B1ff",
-      accent2: "#C096BEff",
+      accent: "#8972D2ff",
+      darkGrey: "#13202Aff",
+      lightGrey: "#BBB0D1ff",
     },
-    image: "mountain1-benjamin-voros_optimized.jpg",
+    imageDesktop: "mountain1-benjamin-voros-compressed.jpg",
+    imageMobile: "mountain1-benjamin-voros-mobile.jpg",
   },
   theme2: {
     colors: {
-      dark: "#0A1221ff",
-      accent1: "#8D2B35ff",
-      accent2: "#631020ff",
+      accent: "#9F3657ff",
+      lightGrey: "#B8C7E1ff",
+      darkGrey: "#18161Bff",
     },
-    image: "mountain2-john-towner_optimized.jpg",
+    imageDesktop: "mountain2-john-towner-compressed.jpg",
+    imageMobile: "mountain2-john-towner-mobile.jpg",
   },
   theme3: {
     colors: {
-      /* CSS HEX */
-      dark: "#00161Cff",
-      accent1: "#254446ff",
-      accent2: "#254446ff",
+      accent: "#EC9B6Cff",
+      lightGrey: "#BEBCEAff",
+      darkGrey: "#2C2F3Aff",
     },
-    image: "mountain3-dorel-gnatiuc_optimized.jpg",
+    imageDesktop: "mountain3-samuel-ferrara-compressed.jpg",
+    imageMobile: "mountain3-samuel-ferrara-mobile.jpg",
   },
 };
 

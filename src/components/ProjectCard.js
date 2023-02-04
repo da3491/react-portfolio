@@ -2,15 +2,17 @@ import React, { useState } from "react";
 
 import { useTheme } from "./ThemeContext";
 import styled from "styled-components";
-import CardModal from "./CardModal";
+// import CardModal from "./CardModal";
+const CardModal = React.lazy(() => import("./CardModal"));
 // import Image from "../images/apple-clone-image.jpg";
 
 const Card = styled.div`
   position: relative;
   width: 100%;
-  background: #333;
+  background: ${(props) => props.themecolor};
+  // background: #333;
   color: white;
-  border: 1px solid #555;
+  border: 1px solid #333;
   border-radius: 3px;
 `;
 const StyledImg = styled.img`
@@ -24,7 +26,7 @@ const StyledImg = styled.img`
   // }
 `;
 const CardInfo = styled.div`
-  padding: 0.5em 1em;
+  padding: clamp(0.5em, 0.8em, 1.5em) clamp(0em, 1.5em, 3em);
 `;
 const Flex = styled.div`
   display: flex;
@@ -32,16 +34,17 @@ const Flex = styled.div`
   align-items: center;
 `;
 const Title = styled.h3`
-  font-size: clamp(1rem, 1.2rem, 2rem);
-  font-weight: 400;
+  font-size: var(--fs-0);
+  font-weight: 300;
   margin: 0;
 `;
 const StyledTags = styled.span`
-  color: #ccc;
-  font-size: 0.8rem;
+  color: ${(props) => props.themecolor};
+  font-size: var(--fs--2);
 `;
 const Button = styled.button`
   display: inline;
+  font-size: var(--fs-0);
   background: ${(props) => props.themecolor};
   color: white;
   border: none;
@@ -64,36 +67,39 @@ const ProjectCard = ({ title, image, text }) => {
   }
 
   return (
-    <Card>
+    <Card themecolor={theme.colors.darkGrey}>
       <StyledImg
+        // loading="lazy"
+        // fetchPriority="low"
         src={require(`../images/${image}`)}
-        themecolor={theme.colors.dark}
       />
       <CardInfo>
         <Flex>
           <div>
             <Title>{title}</Title>
-            <StyledTags themecolor={theme.colors.accent1}>
+            <StyledTags themecolor={theme.colors.lightGrey}>
               JS | React | Chart.js | Responsive
             </StyledTags>
           </div>
           <Button
-            themecolor={theme.colors.accent1}
+            themecolor={theme.colors.accent}
             onClick={() => setVisibleModal(true)}
           >
             More
           </Button>
         </Flex>
       </CardInfo>
-      {visibleModal && (
-        <CardModal
-          visible={visibleModal}
-          title={title}
-          image={image}
-          text={text}
-          closeModal={() => setVisibleModal(false)}
-        />
-      )}
+      <React.Suspense>
+        {visibleModal && (
+          <CardModal
+            visible={visibleModal}
+            title={title}
+            image={image}
+            text={text}
+            closeModal={() => setVisibleModal(false)}
+          />
+        )}
+      </React.Suspense>
     </Card>
   );
 };

@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 const StyledThemeSelector = styled.div`
   position: absolute;
-  // bottom: 2em;
   bottom: -0.5em;
   left: 50%;
   transform: translateX(-50%);
@@ -20,8 +19,8 @@ const StyledButton = styled.button`
   display: inline-block;
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid #ccc;
-  width: 50px;
+  border-bottom: 4px solid #ccc;
+  width: clamp(50px, 75px, 100px);
   height: 10px;
 
   &:hover,
@@ -47,7 +46,7 @@ const ThemeSelector = () => {
           onClick={() => {
             changeTheme(theme);
           }}
-          theme={themes[theme].colors.accent1}
+          theme={themes[theme].colors.accent}
         ></StyledButton>
       ))}
     </StyledThemeSelector>

@@ -20,30 +20,28 @@ import {
 const Container = styled.div`
   height: 100%;
   width: 100%;
-  background: #333;
+  background: ${(props) => props.themecolor};
   color: white;
-  padding: 1.25em;
-  border-radius: 3px;
-  border: 1px solid #555;
-
-  &:after {
-    content: "";
-    backdrop-filter: blur(20px);
-  }
+  border-radius: 5px;
+  border: 1px solid #333;
 `;
 const Grid = styled.div`
-  width: 100%;
+  max-width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
+  padding: var(--space-xs);
+  gap: var(--space-xs);
 `;
 const Col = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  color: ${(props) => props.themecolor};
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
+  // align-items: center;
+  display: grid;
+  grid-template-rows: repeat(auto, 1fr);
   justify-content: flex-start;
   align-items: center;
-  gap: 0.25em;
 `;
 const Flex = styled.div`
   width: 100%;
@@ -51,19 +49,20 @@ const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 1em;
-  padding: 0 0.5em;
+  font-size: var(--fs-1);
+  color: inherit;
 
-  @media (min-width: 768px) {
-    font-size: 1.2rem;
+  & div {
+    color: white;
+  }
+
+  & svg {
+    font-size: var(--fs-2);
+    color: inherit;
   }
 
   &:nth-of-type(6) svg {
-    transform: scale(2.2, 2.2);
-  }
-
-  svg {
-    transform: scale(1.4, 1.4);
+    font-size: var(--fs-4);
   }
 `;
 
@@ -71,60 +70,56 @@ const Skills = () => {
   const theme = useTheme();
 
   return (
-    <Container>
-      <Grid>
-        <Col className="glass">
-          {/* HTML/CSS */}
-          <Flex>
-            <div>HTML/CSS</div>
-            <div>
-              <FaHtml5 />
-              <FaCss3Alt />
-            </div>
-          </Flex>
-          {/* Bootstrap */}
-          <Flex>
-            <div>Bootstrap</div>
-            <FaBootstrap />
-          </Flex>
-          {/* JavaScript */}
-          <Flex>
-            <div>JavaScript</div>
-            <SiJavascript />
-          </Flex>
-          {/* React */}
-          <Flex>
-            <div>React</div>
-            <FaReact />
-          </Flex>
-          {/* Ruby */}
-          <Flex>
-            <div>Ruby</div>
-            <SiRuby />
-          </Flex>
-          {/* Rails */}
-          <Flex>
-            <div>RoR</div>
-            <SiRubyonrails />
-          </Flex>
-        </Col>
-        <Col className="glass">
-          {/* Git */}
-          <Flex>
-            <div>Git</div>
-            <FaGitAlt />
-          </Flex>
-          {/* Heroku */}
-          <Flex>
-            <div>Heroku</div>
-            <SiHeroku />
-          </Flex>
-          {/* Netlify */}
-          <Flex>
-            <div>Netlify</div>
-            <SiNetlify />
-          </Flex>
-        </Col>
+    <Container themecolor={theme.colors.darkGrey}>
+      <Grid themecolor={theme.colors.lightGrey}>
+        {/* HTML/CSS */}
+        <Flex>
+          <div>HTML/CSS</div>
+          <div>
+            <FaHtml5 />
+            <FaCss3Alt />
+          </div>
+        </Flex>
+        {/* Bootstrap */}
+        <Flex>
+          <div>Bootstrap</div>
+          <FaBootstrap />
+        </Flex>
+        {/* JavaScript */}
+        <Flex>
+          <div>JavaScript</div>
+          <SiJavascript />
+        </Flex>
+        {/* React */}
+        <Flex>
+          <div>React</div>
+          <FaReact />
+        </Flex>
+        {/* Ruby */}
+        <Flex>
+          <div>Ruby</div>
+          <SiRuby />
+        </Flex>
+        {/* Rails */}
+        <Flex>
+          <div>RoR</div>
+          <SiRubyonrails />
+        </Flex>
+        {/* Git */}
+        <Flex>
+          <div>Git</div>
+          <FaGitAlt />
+        </Flex>
+        {/* Heroku */}
+        <Flex>
+          <div>Heroku</div>
+          <SiHeroku />
+        </Flex>
+        {/* Netlify */}
+        <Flex>
+          <div>Netlify</div>
+          <SiNetlify />
+        </Flex>
       </Grid>
     </Container>
   );

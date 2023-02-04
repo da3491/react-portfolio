@@ -14,15 +14,12 @@ const Overlay = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    // height: 50%;
-    // background: linear-gradient(
-    //   to bottom,
-    //   rgba(0, 0, 0, 1) 0%,
-    //   rgba(0, 0, 0, 0) 100%
-    //   );
-    height: 100%;
-    background: black;
-    opacity: 0.3;
+    height: 70%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 `;
 
@@ -41,17 +38,13 @@ const ImageLoader = () => {
   return (
     <Overlay>
       <StyledImage
-        src={require(`../images/${theme.image}`)}
-        loading="lazy"
-        alt="view of a mountain"
+        priority
+        src={require(`../images/${theme.imageDesktop}`)}
+        role="presentation"
+        fetchpriority="high"
       />
     </Overlay>
   );
-  /* <img
-        src={require(`../images/${theme.image}`)}
-        alt="view of a mountain"
-        style={{ width: "100px", height: "50px" }}
-      /> */
 };
 
 export default ImageLoader;

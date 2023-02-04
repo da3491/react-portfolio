@@ -11,7 +11,7 @@ const StyledIconGroup = styled.div`
 
   display: flex;
   text-align: right;
-  font-size: 1.6rem;
+  font-size: var(--fs-2);
   margin-bottom: 1em;
   gap: 0.5em;
 `;
@@ -33,7 +33,7 @@ const ContactLinks = () => {
   const theme = useTheme();
 
   return (
-    <StyledIconGroup themecolor={theme.colors.accent1}>
+    <StyledIconGroup themecolor={theme.colors.accent}>
       <StyledLinks href="/resume.com">
         <FaGoogle />
       </StyledLinks>
