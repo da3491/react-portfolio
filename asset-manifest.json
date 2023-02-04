@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d82549c6.css",
+    "main.js": "/static/js/main.ac846197.js",
+    "static/js/787.a2cb61a6.chunk.js": "/static/js/787.a2cb61a6.chunk.js",
+    "static/media/mountain2-john-towner.jpg": "/static/media/mountain2-john-towner.98664e295a7d2d25e44a.jpg",
+    "static/media/mountain1-benjamin-voros.jpg": "/static/media/mountain1-benjamin-voros.3a710a0547c6a33ac100.jpg",
+    "static/media/mountain3-dorel-gnatiuc.jpg": "/static/media/mountain3-dorel-gnatiuc.0db29503f703bf2d5bb3.jpg",
+    "static/media/newsweek-clone-image.jpg": "/static/media/newsweek-clone-image.bdea1d8268de6a588187.jpg",
+    "static/media/apple-clone-image.jpg": "/static/media/apple-clone-image.d265d4fd1772d6ef8c31.jpg",
+    "static/media/airbnb-news-clone-image.jpg": "/static/media/airbnb-news-clone-image.d6dd7acd19d4fda70d80.jpg",
+    "static/media/hero-image.jpg": "/static/media/hero-image.5e28f047c9f43ef068e5.jpg",
+    "static/media/mountain1-benjamin-voros_optimized.jpg": "/static/media/mountain1-benjamin-voros_optimized.9a7a0a9be4d1152c9c38.jpg",
+    "static/media/mountain3-dorel-gnatiuc_optimized.jpg": "/static/media/mountain3-dorel-gnatiuc_optimized.9196c15ce02d88401047.jpg",
+    "static/media/mountain2-john-towner_optimized.jpg": "/static/media/mountain2-john-towner_optimized.7712d1b01067cf3c7a99.jpg",
+    "index.html": "/index.html",
+    "main.d82549c6.css.map": "/static/css/main.d82549c6.css.map",
+    "main.ac846197.js.map": "/static/js/main.ac846197.js.map",
+    "787.a2cb61a6.chunk.js.map": "/static/js/787.a2cb61a6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d82549c6.css",
+    "static/js/main.ac846197.js"
+  ]
+}
