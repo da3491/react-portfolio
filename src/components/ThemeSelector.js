@@ -5,7 +5,8 @@ import styled from "styled-components";
 
 const StyledThemeSelector = styled.div`
   position: absolute;
-  bottom: 0;
+  // bottom: 2em;
+  bottom: -0.5em;
   left: 50%;
   transform: translateX(-50%);
 
@@ -27,6 +28,11 @@ const StyledButton = styled.button`
   &:active,
   &:focus {
     border-bottom: 5px solid ${(props) => props.theme};
+  }
+
+  @media (min-width: 1200px) {
+    width: 75px;
+    height: 12px;
   }
 `;
 

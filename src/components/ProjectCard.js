@@ -1,59 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 
-// import { ActiveCardContext } from "./Work";
 import { useTheme } from "./ThemeContext";
 import styled from "styled-components";
+import CardModal from "./CardModal";
 // import Image from "../images/apple-clone-image.jpg";
 
 const Card = styled.div`
+  position: relative;
   width: 100%;
-  background: #ccc;
-  border-radius: 5px;
-  border: 1px solid white;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 3px;
+`;
+const StyledImg = styled.img`
+  display: none;
+
+  // @media (min-width: 550px) {
+  //   display: inline;
+  //   max-width: 100%;
+  //   aspect-ratio: 2/1;
+  //   object-fit: cover;
+  // }
+`;
+const CardInfo = styled.div`
+  padding: 0.5em 1em;
 `;
 const Flex = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 `;
 const Title = styled.h3`
-  margin: 1em 0 0 0;
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: clamp(1rem, 1.2rem, 2rem);
+  font-weight: 400;
+  margin: 0;
 `;
-const Subtitle = styled.span`
-  color: ${(props) => props.themecolor};
-  padding-left: 0.5em;
+const StyledTags = styled.span`
+  color: #ccc;
   font-size: 0.8rem;
-  font-weight: 600;
-`;
-const CardInfo = styled.div`
-  padding: 1em;
-  padding-top: 0;
-`;
-const CardText = styled.p`
-  padding: 0.5em;
 `;
 const Button = styled.button`
+  display: inline;
   background: ${(props) => props.themecolor};
   color: white;
-  font-weight: 500;
-  font-size: 1.1em;
   border: none;
-  border-radius: 5px;
-  padding: 0.3em 0.7em;
-  margin: 0 1em;
+  padding: 0.1em 0.7em 0.2em;
+  border-radius: 3px;
 `;
-
-// const StyledImg = styled.img`
-//   max-width: 100%;
-//   aspect-ratio: 2/1;
-//   object-fit: cover;
-//   border-bottom: 2px solid ${(props) => props.themecolor};
-// `;
 
 const ProjectCard = ({ title, image, text }) => {
   const theme = useTheme();
+  const [visibleModal, setVisibleModal] = useState(false);
 
   if (!title) {
     title = "project1";
@@ -66,25 +64,36 @@ const ProjectCard = ({ title, image, text }) => {
   }
 
   return (
-    <Card xs={12} md={6}>
-      {/* <StyledImg
+    <Card>
+      <StyledImg
         src={require(`../images/${image}`)}
         themecolor={theme.colors.dark}
-      /> */}
+      />
       <CardInfo>
-        <Title>{title}</Title>
-        <Subtitle themecolor={theme.colors.accent1}>
-          JS | React | Chart.js | Responsive
-        </Subtitle>
-        <div>
-          <hr />
-          <CardText>{text}</CardText>
-          <Flex>
-            <Button themecolor={theme.colors.accent1}>live link</Button>
-            <Button themecolor={theme.colors.accent1}>repository</Button>
-          </Flex>
-        </div>
+        <Flex>
+          <div>
+            <Title>{title}</Title>
+            <StyledTags themecolor={theme.colors.accent1}>
+              JS | React | Chart.js | Responsive
+            </StyledTags>
+          </div>
+          <Button
+            themecolor={theme.colors.accent1}
+            onClick={() => setVisibleModal(true)}
+          >
+            More
+          </Button>
+        </Flex>
       </CardInfo>
+      {visibleModal && (
+        <CardModal
+          visible={visibleModal}
+          title={title}
+          image={image}
+          text={text}
+          closeModal={() => setVisibleModal(false)}
+        />
+      )}
     </Card>
   );
 };

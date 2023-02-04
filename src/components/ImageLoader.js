@@ -8,25 +8,31 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
-    height: 50%;
-    background: linear-gradient(to bottom, black, transparent, transparent);
+    // height: 50%;
+    // background: linear-gradient(
+    //   to bottom,
+    //   rgba(0, 0, 0, 1) 0%,
+    //   rgba(0, 0, 0, 0) 100%
+    //   );
+    height: 100%;
+    background: black;
+    opacity: 0.3;
   }
 `;
 
 const StyledImage = styled.img`
-  // position: absolute;
   position: relative;
   width: 100%;
   height: 100%;
   z-index: -10;
   object-fit: cover;
+  z-index: -1000;
 `;
 
 const ImageLoader = () => {

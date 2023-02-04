@@ -1,19 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { useTheme } from "./ThemeContext";
-import { FaFileAlt, FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { FaGoogle, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 const StyledIconGroup = styled.div`
   position: absolute;
-  bottom: -0.45em;
-  right: -0.35em;
+  top: -0.5em;
+  right: 0.25em;
   color: ${(props) => props.themecolor};
 
   display: flex;
-  flex-direction: column;
   text-align: right;
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   margin-bottom: 1em;
+  gap: 0.5em;
 `;
 const StyledLinks = styled.a`
   color: inherit;
@@ -23,6 +23,10 @@ const StyledLinks = styled.a`
   &:active svg {
     color: white;
   }
+
+  &:firt-child {
+    font-size: 2.4rem;
+  }
 `;
 
 const ContactLinks = () => {
@@ -31,13 +35,13 @@ const ContactLinks = () => {
   return (
     <StyledIconGroup themecolor={theme.colors.accent1}>
       <StyledLinks href="/resume.com">
-        <FaFileAlt />
+        <FaGoogle />
       </StyledLinks>
       <StyledLinks href="https://github.com/da3491">
-        <FaGithubSquare />
+        <FaGithub />
       </StyledLinks>
       <StyledLinks href="https://linkedin.com/da3491">
-        <FaLinkedin />
+        <FaLinkedinIn />
       </StyledLinks>
     </StyledIconGroup>
   );

@@ -1,23 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 import projects from "../utils/projects.js";
+// import projects from "../utils/projects-dummy.js";
 import ProjectCard from "./ProjectCard.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Container = styled.div`
-  width: 90%;
-  margin-bottom: 2em;
+width: 100%;
+height: 100%:
 `;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1;
-  // grid-template-rows: min-content;
-  gap: 1.5em;
+  gap: 0.1em;
 
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  @media (min-aspect-ratio: 9/16) {
     gap: 1em;
   }
 `;

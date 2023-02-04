@@ -18,26 +18,24 @@ import {
 } from "react-icons/si";
 
 const Container = styled.div`
-  width: 100%;
   height: 100%;
-  border-radius: 5px;
+  width: 100%;
+  background: #333;
+  color: white;
+  padding: 1.25em;
+  border-radius: 3px;
+  border: 1px solid #555;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  &:after {
+    content: "";
+    backdrop-filter: blur(20px);
+  }
 `;
 const Grid = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 2;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1;
-    gap: 1em;
-  }
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
 `;
 const Col = styled.div`
   width: 100%;
@@ -45,37 +43,23 @@ const Col = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-`;
-const StyledHeader = styled.h3`
-  width: 70%;
-  text-align: center;
-  font-size: 1.5rem;
-  background: #ccc;
-  border-radius: 5px;
-  border: 1px solid white;
-  padding: 0.5em 1em;
+  gap: 0.25em;
 `;
 const Flex = styled.div`
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  width: 70%;
-  background: #ccc;
-  border-radius: 5px;
-  border: 1px solid white;
-  font-size: 0.8rem;
-  font-weight: 600;
-
-  margin: 0.3em;
-  padding: 0.5em 1em;
+  margin: 0 1em;
+  padding: 0 0.5em;
 
   @media (min-width: 768px) {
     font-size: 1.2rem;
   }
 
-  svg:nth-of-type(6) {
-    transform: scale(2.4, 2.4);
+  &:nth-of-type(6) svg {
+    transform: scale(2.2, 2.2);
   }
 
   svg {
@@ -89,58 +73,56 @@ const Skills = () => {
   return (
     <Container>
       <Grid>
-        <Col>
-          <StyledHeader>Technologies</StyledHeader>
+        <Col className="glass">
           {/* HTML/CSS */}
           <Flex>
+            <div>HTML/CSS</div>
             <div>
               <FaHtml5 />
               <FaCss3Alt />
             </div>
-            <div>HTML/CSS</div>
           </Flex>
           {/* Bootstrap */}
           <Flex>
-            <FaBootstrap />
             <div>Bootstrap</div>
+            <FaBootstrap />
           </Flex>
           {/* JavaScript */}
           <Flex>
-            <SiJavascript />
             <div>JavaScript</div>
+            <SiJavascript />
           </Flex>
           {/* React */}
           <Flex>
-            <FaReact />
             <div>React</div>
+            <FaReact />
           </Flex>
           {/* Ruby */}
           <Flex>
-            <SiRuby />
             <div>Ruby</div>
+            <SiRuby />
           </Flex>
           {/* Rails */}
           <Flex>
+            <div>RoR</div>
             <SiRubyonrails />
-            <div>Ruby on Rails</div>
           </Flex>
         </Col>
-        <Col>
-          <StyledHeader>Tools & Libraries</StyledHeader>
+        <Col className="glass">
           {/* Git */}
           <Flex>
-            <FaGitAlt />
             <div>Git</div>
+            <FaGitAlt />
           </Flex>
           {/* Heroku */}
           <Flex>
-            <SiHeroku />
             <div>Heroku</div>
+            <SiHeroku />
           </Flex>
           {/* Netlify */}
           <Flex>
-            <SiNetlify />
             <div>Netlify</div>
+            <SiNetlify />
           </Flex>
         </Col>
       </Grid>
