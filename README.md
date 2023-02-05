@@ -1,6 +1,7 @@
 ## Screenshots
 
-![App Screenshot](C:\Users\Drew\Desktop\WebDev\Portfolio\react-portfolio\src\images\PortfolioDesign.jpg)
+![Site Screenshot](https://raw.githubusercontent.com/da3491/react-portfolio/main/src/images/PortfolioDesign.jpg)
+
 
 # Portfolio
 
