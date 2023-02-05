@@ -2,7 +2,6 @@
 
 ![Site Screenshot](https://raw.githubusercontent.com/da3491/react-portfolio/main/src/images/PortfolioDesign.jpg)
 
-
 # Portfolio
 
 Thanks for taking the time to check out my page!
@@ -31,9 +30,23 @@ react-router, react-icons, styled-components
 - Fully Responsive
 - React Hooks (useState, useEffect, useContext)
 
+## To Do
+
+- Create Logo
+- Padding on Buttons on mobile
+- Font weight on Projects/Skills
+- Left padding on Title
+- Placeholder for loading Components
+- Find loading alternative for Images (srcset/sizes)
+- Entire Skills section (formatting, styling, interactivity)
+- Modal window styling
+
 ## Lessons Learned
 
 What did you learn while building this project? What challenges did you face and how did you overcome them?
 
-Issues:
-The bs navbar component was not toggling, and from copying the source code and seeing that did not work either, i concluded it was because my dependancies were missing a file import of some sort. I suspected it may be popper.js but ultimately after a while I came across the react-boostrap library and I'm pleased with the ease of use!
+Bootstrap to No bootstrap
+Dynamic Background Images
+Load Times
+Responsiveness and styling (use of clamp > media queries)
+Hosting SAP on gh-pages
