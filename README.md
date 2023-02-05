@@ -36,10 +36,10 @@ react-router, react-icons, styled-components
 - Padding on Buttons on mobile
 - Font weight on Projects/Skills
 - Left padding on Title
-- Placeholder for loading Components
 - Find loading alternative for Images (srcset/sizes)
 - Entire Skills section (formatting, styling, interactivity)
 - Modal window styling
+- Animations for buttons, image loading, component loading
 
 ## Lessons Learned
 
