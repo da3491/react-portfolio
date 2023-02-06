@@ -23,14 +23,6 @@ const projects = {
     repoLink: "",
     liveLink: "",
   },
-  project4: {
-    title: "To Come",
-    image: "newsweek-clone-image.jpg",
-    tags: ["JS", "React", "Bootstrap", "Chart.js,"],
-    text: "Some quick example text to build on the card title and make up the bulk of the card's content. This will express additional information relating to the project.",
-    repoLink: "",
-    liveLink: "",
-  },
 };
 
 export default projects;

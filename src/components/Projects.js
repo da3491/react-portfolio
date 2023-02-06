@@ -8,8 +8,9 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
+  grid-row: 3/5;
   grid-template-columns: 1;
-  gap: clamp(0em, 0.25em, 1em);
+  gap: var(--space-3xs);
 `;
 
 const Projects = () => {

@@ -9,6 +9,13 @@ import ContactLinks from "./components/ContactLinks";
 import Home from "./components/Home";
 
 const GlobalStyles = createGlobalStyle`
+*{
+  padding: 0;
+  margin: 0;
+  box-shadow: border-box;
+  font-family: "Roboto", 'sans-serif';
+
+}
 :root {
   --fs--2: clamp(0.69rem, calc(0.55rem + 0.65vw), 1.20rem);
   --fs--1: clamp(0.78rem, calc(0.55rem + 0.73vw), 1.30rem);
@@ -39,6 +46,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 const CenteredContent = styled.div`

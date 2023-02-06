@@ -49,7 +49,7 @@ const Flex = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: var(--fs-1);
+  font-size: var(--fs--1);
   color: inherit;
 
   & div {
@@ -57,12 +57,12 @@ const Flex = styled.div`
   }
 
   & svg {
-    font-size: var(--fs-2);
+    font-size: var(--fs-0);
     color: inherit;
   }
 
   &:nth-of-type(6) svg {
-    font-size: var(--fs-4);
+    font-size: var(--fs-2);
   }
 `;
 

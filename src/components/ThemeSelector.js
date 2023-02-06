@@ -4,8 +4,9 @@ import themes from "../utils/themes";
 import styled from "styled-components";
 
 const StyledThemeSelector = styled.div`
-  position: absolute;
-  bottom: -0.5em;
+  position: fixed;
+  bottom: var(--space-m);
+  // bottom: -0.5em;
   left: 50%;
   transform: translateX(-50%);
 

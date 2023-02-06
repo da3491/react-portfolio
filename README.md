@@ -26,9 +26,18 @@ react-router, react-icons, styled-components
 
 ## Features
 
+**Base:**
+
+- React Hooks (useState, useEffect, useContext)
 - Multiple themes with dynamic images/colors
 - Fully Responsive
-- React Hooks (useState, useEffect, useContext)
+
+**Considerations:**
+-ProjectCards full page on mobile?
+
+**Future Features:**
+-Logo Animation: Spread to show full name
+-Swipable Projects -> Skills
 
 ## To Do
 
@@ -37,6 +46,7 @@ react-router, react-icons, styled-components
 - Font weight on Projects/Skills
 - Left padding on Title
 - Find loading alternative for Images (srcset/sizes)
+
 - Entire Skills section (formatting, styling, interactivity)
 - Modal window styling
 - Animations for buttons, image loading, component loading
@@ -49,4 +59,4 @@ Bootstrap to No bootstrap
 Dynamic Background Images
 Load Times
 Responsiveness and styling (use of clamp > media queries)
-Hosting SAP on gh-pages
+Hosting react app on github pages

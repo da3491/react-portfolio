@@ -34,13 +34,13 @@ const Flex = styled.div`
   align-items: center;
 `;
 const Title = styled.h3`
-  font-size: var(--fs-0);
+  font-size: var(--fs-1);
   font-weight: 300;
   margin: 0;
 `;
 const StyledTags = styled.span`
   color: ${(props) => props.themecolor};
-  font-size: var(--fs--2);
+  font-size: var(--fs--1);
 `;
 const Button = styled.button`
   display: inline;
@@ -48,8 +48,8 @@ const Button = styled.button`
   background: ${(props) => props.themecolor};
   color: white;
   border: none;
-  padding: 0.1em 0.7em 0.2em;
   border-radius: 3px;
+  padding: 0.3em 0.6em;
 `;
 
 const ProjectCard = ({ title, image, text }) => {
@@ -69,8 +69,8 @@ const ProjectCard = ({ title, image, text }) => {
   return (
     <Card themecolor={theme.colors.darkGrey}>
       <StyledImg
-        // loading="lazy"
-        // fetchPriority="low"
+        loading="lazy"
+        fetchPriority="low"
         src={require(`../images/${image}`)}
       />
       <CardInfo>
