@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/react-portfolio/static/css/main.289b2a99.css",
-    "main.js": "/react-portfolio/static/js/main.1e364d78.js",
-    "static/js/715.fa9ed1b3.chunk.js": "/react-portfolio/static/js/715.fa9ed1b3.chunk.js",
-    "static/js/44.fa28a461.chunk.js": "/react-portfolio/static/js/44.fa28a461.chunk.js",
+    "main.js": "/react-portfolio/static/js/main.f89641b1.js",
+    "static/js/715.f4308e98.chunk.js": "/react-portfolio/static/js/715.f4308e98.chunk.js",
+    "static/js/44.91166b78.chunk.js": "/react-portfolio/static/js/44.91166b78.chunk.js",
     "static/js/787.a2cb61a6.chunk.js": "/react-portfolio/static/js/787.a2cb61a6.chunk.js",
     "static/js/793.276220c7.chunk.js": "/react-portfolio/static/js/793.276220c7.chunk.js",
     "static/js/978.b8676838.chunk.js": "/react-portfolio/static/js/978.b8676838.chunk.js",
@@ -23,9 +23,9 @@
     "static/media/mountain2-john-towner-mobile.jpg": "/react-portfolio/static/media/mountain2-john-towner-mobile.1893d7c9372cdc7f254c.jpg",
     "index.html": "/react-portfolio/index.html",
     "main.289b2a99.css.map": "/react-portfolio/static/css/main.289b2a99.css.map",
-    "main.1e364d78.js.map": "/react-portfolio/static/js/main.1e364d78.js.map",
-    "715.fa9ed1b3.chunk.js.map": "/react-portfolio/static/js/715.fa9ed1b3.chunk.js.map",
-    "44.fa28a461.chunk.js.map": "/react-portfolio/static/js/44.fa28a461.chunk.js.map",
+    "main.f89641b1.js.map": "/react-portfolio/static/js/main.f89641b1.js.map",
+    "715.f4308e98.chunk.js.map": "/react-portfolio/static/js/715.f4308e98.chunk.js.map",
+    "44.91166b78.chunk.js.map": "/react-portfolio/static/js/44.91166b78.chunk.js.map",
     "787.a2cb61a6.chunk.js.map": "/react-portfolio/static/js/787.a2cb61a6.chunk.js.map",
     "793.276220c7.chunk.js.map": "/react-portfolio/static/js/793.276220c7.chunk.js.map",
     "978.b8676838.chunk.js.map": "/react-portfolio/static/js/978.b8676838.chunk.js.map",
@@ -33,6 +33,6 @@
   },
   "entrypoints": [
     "static/css/main.289b2a99.css",
-    "static/js/main.1e364d78.js"
+    "static/js/main.f89641b1.js"
   ]
 }
