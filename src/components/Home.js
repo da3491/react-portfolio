@@ -91,9 +91,12 @@ const ContentButton = styled.button`
   border: none;
 
   color: white;
-  font-size: var(--fs-2);
-  font-weight: 300;
+  font-size: var(--fs-1);
   padding-bottom: var(--space-xs);
+
+  & h2 {
+    font-weight: 300;
+  }
 
   &:hover,
   &:active {
@@ -140,10 +143,10 @@ const Home = () => {
       <GridRow>
         <ContentButtons>
           <ContentButton onClick={() => setContent(true)}>
-            <span>Projects</span>
+            <h2>Projects</h2>
           </ContentButton>
           <ContentButton onClick={() => setContent(false)}>
-            <span>Skills</span>
+            <h2>Skills</h2>
           </ContentButton>
         </ContentButtons>
         <ContentLoaded {...handlers}>

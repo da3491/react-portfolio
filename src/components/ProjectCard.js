@@ -9,29 +9,18 @@ const CardModal = React.lazy(() => import("./CardModal"));
 const Card = styled.div`
   position: relative;
   width: 100%;
+
   background: ${(props) => props.themecolor};
-  // background: #333;
   color: white;
   border: 1px solid #333;
   border-radius: 3px;
 `;
-const StyledImg = styled.img`
-  display: none;
-
-  // @media (min-width: 550px) {
-  //   display: inline;
-  //   max-width: 100%;
-  //   aspect-ratio: 2/1;
-  //   object-fit: cover;
-  // }
-`;
 const CardInfo = styled.div`
-  padding: clamp(0.5em, 0.8em, 1.5em) clamp(0em, 1.5em, 3em);
-`;
-const Flex = styled.div`
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 var(--space-s);
 `;
 const Title = styled.h3`
   font-size: var(--fs-1);
@@ -43,6 +32,7 @@ const StyledTags = styled.span`
   font-size: var(--fs--1);
 `;
 const Button = styled.button`
+  grid-column: 2/3;
   display: inline;
   font-size: var(--fs-0);
   background: ${(props) => props.themecolor};
@@ -68,26 +58,19 @@ const ProjectCard = ({ title, image, text }) => {
 
   return (
     <Card themecolor={theme.colors.darkGrey}>
-      <StyledImg
-        loading="lazy"
-        fetchPriority="low"
-        src={require(`../images/${image}`)}
-      />
       <CardInfo>
-        <Flex>
-          <div>
-            <Title>{title}</Title>
-            <StyledTags themecolor={theme.colors.lightGrey}>
-              JS | React | Chart.js | Responsive
-            </StyledTags>
-          </div>
-          <Button
-            themecolor={theme.colors.accent}
-            onClick={() => setVisibleModal(true)}
-          >
-            More
-          </Button>
-        </Flex>
+        <div>
+          <Title>{title}</Title>
+          <StyledTags themecolor={theme.colors.lightGrey}>
+            JS | React | Chart.js | Responsive
+          </StyledTags>
+        </div>
+        <Button
+          themecolor={theme.colors.accent}
+          onClick={() => setVisibleModal(true)}
+        >
+          More
+        </Button>
       </CardInfo>
       <React.Suspense>
         {visibleModal && (

@@ -6,9 +6,13 @@
 
 Thanks for taking the time to check out my page!
 
-I wanted to create something fairly minimalistic and esthetically pleasing. But also including the functionality of different themes for a bit of interactivity.
+This project has gone through multiple stages of structure and design.
 
-Althought I did start with Bootstrap, I didn't like how it crowded my components. So I decided to build out this project without any CSS framework, both to separate and centralize the location of my CSS, and to exercise my knowledge of properties and responsiveness.
+As a multi-page site, I found there was not enough content for the amount of space I was using. My goal was to be concise with my delivery of information and make it all easily accessible. I feel I achieved this by removing the need to scroll down the window and make it a Single Page site, and incorporating tabs and modals.
+
+As far as the design goes, I liked minimalistic styling. I wanted to use a Sans-Serif font with a low font weight. To show off a little of some personal flare, I wanted to include some beautiful images of nature that will have dynamic color styles to accompany it.
+
+For some interactivity, theres of course the themese which change according the the selector fixed to the bottom of the screen. I plan on incorporating more as time goes on, adding more hover and click effects, and animations.
 
 ## Sections
 
@@ -20,7 +24,7 @@ Althought I did start with Bootstrap, I didn't like how it crowded my components
 ## Tech Stack
 
 **React:**
-react-router, react-icons, styled-components
+react-router, react-icons, styled-components, swipeable-react
 
 **Resources:**
 
@@ -31,32 +35,32 @@ react-router, react-icons, styled-components
 - React Hooks (useState, useEffect, useContext)
 - Multiple themes with dynamic images/colors
 - Fully Responsive
+- Swipeable between Projects and Skills
 
 **Considerations:**
 -ProjectCards full page on mobile?
 
 **Future Features:**
 -Logo Animation: Spread to show full name
--Swipable Projects -> Skills
 
 ## To Do
 
 - Create Logo
-- Padding on Buttons on mobile
-- Font weight on Projects/Skills
-- Left padding on Title
 - Find loading alternative for Images (srcset/sizes)
-
-- Entire Skills section (formatting, styling, interactivity)
+- Skills section design
 - Modal window styling
-- Animations for buttons, image loading, component loading
+- React Loading Skeleton
 
 ## Lessons Learned
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
+**No Bootstrap**
+I chose not to use Bootstrap and instead write my own styles with styled-components, allowing me more control over the aesthetic and functionality of my website, and helped me achieve the look and feel I am after. I also enjoyed the cleanliness of my components without the class styling BootStrap provides.
 
-Bootstrap to No bootstrap
-Dynamic Background Images
-Load Times
-Responsiveness and styling (use of clamp > media queries)
-Hosting react app on github pages
+**Dynamic Background Images**
+I had multiple large images to load in my website that were slowing down the loading speed of my website, which would affect the user experience. To resolve this, I implemented lazy loading and prioritized the images that were immediately seen. I also made sure to compress these images so that they took up less space and could be loaded more quickly.
+
+**Responsiveness**
+I found difficulty in making the spacing and font sizes look great on any screen size. To resolve this, I employed a number of techniques, including using the CSS function clamp to limit the size of font and spacing, and using media queries more sparingly, mainly for 3/4 aspect ratio as the transition from desktop to mobile.
+
+**Hosting on Gh-pages**
+It was a little of a challenge hosting my react website on gh-pages. Through reading documentation and some trial and error, I learned more on the process of deploying my changes to the branch hosting my site. This strengthened my understanding of git and working with react in production.

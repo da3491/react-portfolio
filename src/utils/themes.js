@@ -1,12 +1,21 @@
 const themes = {
+  // theme1: {
+  //   colors: {
+  //     accent: "#8972D2ff",
+  //     darkGrey: "#13202Aff",
+  //     lightGrey: "#BBB0D1ff",
+  //   },
+  //   imageDesktop: "mountain1-benjamin-voros-compressed.jpg",
+  //   imageMobile: "mountain1-benjamin-voros-mobile.jpg",
+  // },
   theme1: {
     colors: {
-      accent: "#8972D2ff",
-      darkGrey: "#13202Aff",
-      lightGrey: "#BBB0D1ff",
+      accent: "#3DA653ff",
+      darkGrey: "#1E3035ff",
+      lightGrey: "#ACC8D2ff",
     },
-    imageDesktop: "mountain1-benjamin-voros-compressed.jpg",
-    imageMobile: "mountain1-benjamin-voros-mobile.jpg",
+    imageDesktop: "mountain1-bailey-zindel-compressed.jpg",
+    imageMobile: "mountain1-bailey-zindel-mobile.jpg",
   },
   theme2: {
     colors: {
